@@ -1,0 +1,20 @@
+services:
+  frontendnginx:
+    build: ./web
+    init: true 
+    networks:
+      - frontend
+    ports:
+      - "80:80"
+  backendflask:
+    build: ./server
+    init: true 
+    networks:
+      - frontend
+      - backend
+    ports:
+      - "8000:8000"
+
+networks:
+  frontend:
+  backend:
