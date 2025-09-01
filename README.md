@@ -1,4 +1,6 @@
-# 🚀 **Mal-JS Deployment & Tech Stack**
+# 🚀 **Mal-JS**
+
+Detect Malicious Javascript by uploading your file
 
 **See Actual Deployment:**  
 🌐 [http://mal-js.click/](http://mal-js.click/) 
