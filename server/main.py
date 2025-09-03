@@ -8,9 +8,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-#CORS(app, origins=["http://localhost:80"])
-
-CORS(app)
+#CORS(app, origins=["http://:80"])
 
 
 model_name = 'non_obfuscated_NL_XGB.pk1' #Natural Language Extraction

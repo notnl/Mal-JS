@@ -163,7 +163,6 @@ const ReviewQualitySystem = () => {
   const onDrop = useCallback((acceptedFiles) => {
 	setIsProcessing(true)
     acceptedFiles.forEach((file) => {
-	console.log(file)
       const reader = new FileReader()
      reader.readAsText(file);
 
@@ -173,8 +172,7 @@ const ReviewQualitySystem = () => {
       reader.onload = () => {
       // Do whatever you want with the file contents
         const binaryStr = reader.result
-	
-        console.log(binaryStr)
+		
 	ProcessClick(binaryStr,file.name)
       }
 
@@ -190,7 +188,6 @@ const ReviewQualitySystem = () => {
     total: results.length,
     approved: results.filter((r) => r.action === "approve").length,
     flagged: results.filter((r) => r.action === "flag").length,
-    rejected: results.filter((r) => r.action === "reject").length,
   };
 
   return (
@@ -202,7 +199,7 @@ const ReviewQualitySystem = () => {
             <div>
               <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-2">
                 <Shield className="h-8 w-8 text-blue-600" />
-                Review Quality System
+                Malicious Javascript Detection System
               </h1>
               <p className="text-gray-600 mt-2">
                 ML-powered system for Malicious Javascript detection
@@ -247,7 +244,7 @@ const ReviewQualitySystem = () => {
                 <div>
                   <p className="text-sm font-medium text-gray-600">Flagged</p>
                   <p className="text-2xl font-bold text-red-600">
-                    {summary.rejected}
+                    {summary.flagged}
                   </p>
                 </div>
                 <XCircle className="h-8 w-8 text-red-600" />

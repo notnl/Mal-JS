@@ -1,6 +1,7 @@
 import React, {useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
 import {Card,CardContent} from './card'
+import {MAX_FILE_SIZE} from '@/constants'
 
 import {
   Shield,
@@ -21,7 +22,9 @@ import {
 } from "lucide-react";
 
 export default function DropZoneComponent({onDrop}) {
-  const {getRootProps, getInputProps} = useDropzone({onDrop})
+
+
+  const {getRootProps, getInputProps} = useDropzone({onDrop, maxSize:MAX_FILE_SIZE})
 
   return (
     <div {...getRootProps()}>
